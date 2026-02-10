@@ -77,8 +77,8 @@ const questions = [
     q: "Who fell in love first? 💘",
     a: [
       ["You (I saw it coming)", "I noticed before you admitted it… and I loved that 🔥", false],
-      ["Me (I tried to play it cool)", "I absolutely failed at hiding it, didn’t I? 💗", false],
       ["Both at the same time (soulmate timing ✨)", "", true],
+      ["Me (I tried to play it cool)", "I absolutely failed at hiding it, didn’t I? 💗", false],
       ["Our vibes before we did", "Honestly yeah, everyone else knew before we did 🐝", false]
     ]
   },
@@ -97,7 +97,6 @@ const questions = [
       ["You (dramatically)", "You love loudly—and I honestly love that about you 💗", false],
       ["Me (unhealthily 😌)", "Maybe a little too much… but I wouldn’t change it 💛", false],
       ["Both—just differently but deeply 💗", "", true],
-      ["Takli Lhrissa?.", "Not allowed, wanna eat smth else instead?", false]
     ]
   },
   {
@@ -150,7 +149,7 @@ function revealNext() {
   const loveItems = [
    "Your brains—so smart, I pretend to understand… but mostly just stare and look cute. 🧠😉",
     "Those deep eyes—I swear they hypnotize me… or maybe I’m just weak for you. 👀💘",
-    "When you “correct” my English… I lie, I hate it… but secretly, it’s my favorite torture. 😏",
+    "Your voice does this thing where I stop listening to words and start falling instead.",
     "Your mix of cute, hot, and beautiful—illegal, honestly. 🔥🥰",
     "How unique you are—like, did the universe make you just to annoy me and steal my heart? 💎💖",
     "Your laugh—it makes me want to do everything right… or at least make you laugh more. 😄💗"
@@ -166,13 +165,6 @@ function revealNext() {
   });
 }
 
-const dateMessages = {
-  "🎬 Cinema": "I'll let you choose… maybe 😌🎬",
-  "🏖️ Walk on the beach": "Oh, so you need to wear those comfy shoes of yours 👟💛",
-  "☕ Coffee & cheesecake": "Starbucks Villa & Amoud strawberry cheesecake 🍰☕",
-  "🎮 Play our game": "I'll watch you destroy me & pull these tricks on me 🎮😤",
-  "💋 Make love (the hottest idea 🔥)": "You better get ready 😈🔥"
-};
 
 document.querySelectorAll("#dates .card").forEach(card => {
   card.onclick = () => {
