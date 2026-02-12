@@ -76,7 +76,7 @@ const questions = [
   {
   q: "Who fell in love first? 💘",
   a: [
-    ["You (but I fell harder 💖)", "I noticed before you admitted it… and I loved that ", true],
+    ["You (but I fell harder 💖)"",  true],
     ["Both at the same time (soulmate timing ✨)", "", false],
     ["Me (I tried to play it cool)", "I absolutely failed at hiding it, didn’t I? 💗", false],
     ["Our vibes before we did", "Honestly yeah, everyone else knew before we did 🐝", false]
