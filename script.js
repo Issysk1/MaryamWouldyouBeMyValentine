@@ -43,6 +43,10 @@ noBtn.onmouseover = () => {
 };
 
 // 💕 YES
+const valentine = document.getElementById("valentine"); // Ensure this exists in your HTML
+const yesMessage = document.getElementById("yesMessage"); // Ensure this exists
+const quizIntro = document.getElementById("quizIntro"); // Ensure this exists
+
 document.getElementById("yes").onclick = () => {
   valentine.classList.add("hidden");
   yesMessage.classList.remove("hidden");
@@ -74,15 +78,14 @@ const questions = [
     ]
   },
   {
-  q: "Who fell in love first? 💘",
-  a: [
-    ["Both at the same time (soulmate timing ✨)", "", false],
-    ["You (but I fell harder 💖)"",  true],
-    ["Me (I tried to play it cool)", "I absolutely failed at hiding it, didn’t I? 💗", false],
-    ["Our vibes before we did", "Honestly yeah, everyone else knew before we did 🐝", false]
-  ]
-}
-
+    q: "Who fell in love first? 💘",
+    a: [
+      ["Both at the same time (soulmate timing ✨)", "", false],
+      ["You (but I fell harder 💖)", "", true],
+      ["Me (I tried to play it cool)", "I absolutely failed at hiding it, didn’t I? 💗", false],
+      ["Our vibes before we did", "Honestly yeah, everyone else knew before we did 🐝", false]
+    ]
+  },
   {
     q: "Who is funnier? 😏",
     a: [
@@ -97,7 +100,7 @@ const questions = [
     a: [
       ["You (dramatically)", "You love loudly—and I honestly love that about you 💗", false],
       ["Me (unhealthily 😌)", "Maybe a little too much… but I wouldn’t change it 💛", false],
-      ["Both—just differently but deeply 💗", "", true],
+      ["Both—just differently but deeply 💗", "", true]
     ]
   },
   {
@@ -111,8 +114,11 @@ const questions = [
   }
 ];
 
-
 let qi = 0;
+const quiz = document.getElementById("quiz"); // Ensure this exists
+const question = document.getElementById("question"); // Ensure this exists
+const answers = document.getElementById("answers"); // Ensure this exists
+
 quizIntro.onclick = () => {
   quiz.classList.remove("hidden");
   showQ();
@@ -125,13 +131,13 @@ function showQ() {
     const b = document.createElement("button");
     b.innerText = ans[0];
     b.onclick = () => {
-    if (ans[2]) {
-  b.classList.add("correct");
-  explodeHearts();
-  setTimeout(() => {
-    qi++;
-    qi < questions.length ? showQ() : revealNext();
-  }, 800);
+      if (ans[2]) {
+        b.classList.add("correct");
+        explodeHearts();
+        setTimeout(() => {
+          qi++;
+          qi < questions.length ? showQ() : revealNext();
+        }, 800);
       } else {
         b.classList.add("wrong");
         b.innerText = "❌ " + ans[1];
@@ -143,12 +149,12 @@ function showQ() {
 
 // 💌 REVEAL
 function revealNext() {
-  ["dates","love","memories","music","goodbye"].forEach((id,i)=>{
-    setTimeout(()=>document.getElementById(id).classList.remove("hidden"), i*1200);
+  ["dates", "love", "memories", "music", "goodbye"].forEach((id, i) => {
+    setTimeout(() => document.getElementById(id).classList.remove("hidden"), i * 1200);
   });
 
   const loveItems = [
-   "Your brains—so smart, I pretend to understand… but mostly just stare and look cute. 🧠😉",
+    "Your brains—so smart, I pretend to understand… but mostly just stare and look cute. 🧠😉",
     "Those deep eyes—I swear they hypnotize me… or maybe I’m just weak for you. 👀💘",
     "Your voice does this thing where I stop listening to words and start falling instead.",
     "Your mix of cute, hot, and beautiful—illegal, honestly. 🔥🥰",
@@ -156,16 +162,15 @@ function revealNext() {
     "Your laugh—it makes me want to do everything right… or at least make you laugh more. 😄💗"
   ];
 
-  loveItems.forEach((t,i)=>{
-    setTimeout(()=>{
-      const c=document.createElement("div");
-      c.className="card";
-      c.innerText=t;
+  loveItems.forEach((t, i) => {
+    setTimeout(() => {
+      const c = document.createElement("div");
+      c.className = "card";
+      c.innerText = t;
       loveList.appendChild(c);
-    },i*700);
+    }, i * 700);
   });
 }
-
 
 document.querySelectorAll("#dates .card").forEach(card => {
   card.onclick = () => {
@@ -177,7 +182,7 @@ document.querySelectorAll("#dates .card").forEach(card => {
 });
 
 // 📸 FLIP
-function flip(el){ el.classList.toggle("flipped"); }
+function flip(el) { el.classList.toggle("flipped"); }
 setInterval(() => {
   const s = document.createElement("div");
   s.innerText = "✨";
@@ -190,12 +195,13 @@ setInterval(() => {
   setTimeout(() => s.remove(), 5000);
 }, 600);
 
-const worm = document.getElementById("worm");
+const worm = document.getElementById("worm"); // Ensure this exists
 
 document.addEventListener("mousemove", (e) => {
   worm.style.left = e.clientX + "px";
   worm.style.top = e.clientY + "px";
 });
+
 const floatingLove = ["💗", "🌸", "✨", "💞", "🫶"];
 
 setInterval(() => {
